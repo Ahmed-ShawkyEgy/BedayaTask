@@ -25,7 +25,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        //
+        return view('stores.create');
     }
 
     /**
@@ -36,7 +36,13 @@ class StoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = new Store;
+        $store->name = $request->name;
+        $store->address = $request->address;
+        $store->logoPath = $request->logoPath;
+        
+        $store->save();
+        return redirect('/viewStores');
     }
 
     /**

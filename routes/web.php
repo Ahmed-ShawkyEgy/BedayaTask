@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('layout');
 });
 
-Route::get('store/create','StoreController@create');
+Route::get('createStore','StoreController@create');
 Route::post('createStore','StoreController@store');
 
 
