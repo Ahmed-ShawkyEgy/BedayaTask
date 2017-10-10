@@ -45,9 +45,12 @@ class StoreController extends Controller
      * @param  \App\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function show(Store $store)
+    public function show($storeID)
     {
-        //
+        $store = Store::find($storeID);
+        if($store==null)
+            return $this->index();
+        return view('stores.show' , compact('store'));
     }
 
     /**

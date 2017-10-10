@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('store/create','StoreController@create');
-Route::post('store','StoreController@store');
+Route::post('createStore','StoreController@store');
 
 
-Route::get('store','StoreController@index');
+Route::get('viewStores','StoreController@index');
+Route::get('viewStores/{storeID}','StoreController@show');
