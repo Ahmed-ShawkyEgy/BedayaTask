@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout');
 });
+
+Route::get('store/create','StoreController@create');
+Route::post('store','StoreController@store');
+
+
+Route::get('store','StoreController@index');
