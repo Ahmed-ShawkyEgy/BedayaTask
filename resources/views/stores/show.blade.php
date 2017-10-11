@@ -21,5 +21,9 @@
             </tr>
         </tbody>
     </table>
+    <form action="/updateStore/1/edit">
+        <button class="btn-primary" type="submit">Update Store</button>
+    </form>
+
 </div>
 @endsection

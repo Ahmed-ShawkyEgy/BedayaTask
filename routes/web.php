@@ -21,3 +21,6 @@ Route::post('createStore','StoreController@store');
 
 Route::get('viewStores','StoreController@index');
 Route::get('viewStores/{storeID}','StoreController@show');
+
+Route::get('updateStore/{storeID}/edit' , 'StoreController@edit');
+Route::patch('updateStore/{storeID}','StoreController@update');

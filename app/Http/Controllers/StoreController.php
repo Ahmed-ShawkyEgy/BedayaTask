@@ -64,10 +64,13 @@ class StoreController extends Controller
      *
      * @param  \App\Store  $store
      * @return \Illuminate\Http\Response
-     */
-    public function edit(Store $store)
+     */    
+     public function edit($storeID)
     {
-        //
+        $store = Store::find($storeID);
+        if($store == null)
+            redirect('/viewStores');
+        return view('stores.edit' , compact('store'));
     }
 
     /**
@@ -77,19 +80,16 @@ class StoreController extends Controller
      * @param  \App\Store  $store
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Store $store)
+    public function update(Request $request, $storeID)
     {
-        //
+        $store = Store::find($storeID);
+        
+        $store->name = $request->name;
+        $store->address = $request->address;
+        $store->logoPath = $request->logoPath;
+        
+        $store->save();
+        return redirect('/viewStores');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Store  $store
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Store $store)
-    {
-        //
-    }
 }
