@@ -21,7 +21,7 @@
             </tr>
         </tbody>
     </table>
-    <form action="/updateStore/1/edit">
+    <form action="/updateStore/{{$store->id}}/edit">
         <button class="btn-primary" type="submit">Update Store</button>
     </form>
 
