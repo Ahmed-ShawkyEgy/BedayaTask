@@ -1,6 +1,6 @@
 h1,
 h3 {
-    padding: 15px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -9,9 +9,13 @@ table a {
     height: 100%;
 }
 
+table a:hover {
+    text-decoration: none;
+}
+
 table {
-    width: 75% !important;
-    margin: 5%;
+    width: 25% !important;
+    margin: auto;
 }
 
 form {

@@ -55,7 +55,7 @@ class StoreController extends Controller
     {
         $store = Store::find($storeID);
         if($store==null)
-            return $this->index();
+            return redirect('/viewStores');
         return view('stores.show' , compact('store'));
     }
 
