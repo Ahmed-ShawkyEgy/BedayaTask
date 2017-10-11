@@ -69,7 +69,7 @@ class StoreController extends Controller
     {
         $store = Store::find($storeID);
         if($store == null)
-            redirect('/viewStores');
+           return redirect('/viewStores');
         return view('stores.edit' , compact('store'));
     }
 
@@ -83,7 +83,8 @@ class StoreController extends Controller
     public function update(Request $request, $storeID)
     {
         $store = Store::find($storeID);
-        
+        if($store == null)
+            redirect('/viewStores');
         $store->name = $request->name;
         $store->address = $request->address;
         $store->logoPath = $request->logoPath;
